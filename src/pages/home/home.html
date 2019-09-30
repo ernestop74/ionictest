@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+   <!--  <ion-item *ngFor="let u of users | search : terms"> -->
+   <ion-item *ngFor="let u of users">
+      <h2>Name: {{u.name}}</h2>
+      <p>Email: {{u.email}}</p>
+    </ion-item>
+	
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </form>
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        SIGN IN
+      </button>
+    </div>	
+  </ion-list>
+</ion-content>
